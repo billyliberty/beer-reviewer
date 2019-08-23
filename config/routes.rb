@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root "static#home"
   resources :users
   resources :reviews
   resources :beers
