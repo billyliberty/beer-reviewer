@@ -3,6 +3,11 @@ class ReviewsController < ApplicationController
     before_action :require_login
 
     def index
+        if params[:beer_id]
+            @review = Beer.find(params[:beer_id]).review 
+        else
+            @review = Review.all 
+        end
     end
 
     def show
