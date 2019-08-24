@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
 
-  resources :users, only [:new, :create, :show]
-  resources :reviews
+  
   resources :beers do
     resources :reviews
+  end
+
+  resources :users
+  resources :reviews
 
   # Home page
-
   root "static#home"
 
   # login
