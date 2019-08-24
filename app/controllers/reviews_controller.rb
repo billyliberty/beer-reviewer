@@ -10,8 +10,6 @@ class ReviewsController < ApplicationController
         end
     end
 
-    def show
-    end
 
     def new
         @review = Review.new(:beer_id => params[:beer_id], :user_id => current_user.id)
@@ -21,6 +19,9 @@ class ReviewsController < ApplicationController
     end
 
     def edit
+    end
+
+    def show
     end
 
     private
