@@ -14,6 +14,8 @@ class ReviewsController < ApplicationController
     end
 
     def new
+        if params[:beer_id]
+            redirect_to beers_path
     end
 
     def create

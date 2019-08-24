@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by_id(params[:id])
+        @beer_bucket = current_user.beers
     end
 
     def create
@@ -21,7 +21,6 @@ class UsersController < ApplicationController
         end
     end
 
-    
 
     private 
 

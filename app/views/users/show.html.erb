@@ -1,3 +1,9 @@
 <h1>Your beer list!</h1>
 <br>
+<% @beer_bucket.each do |beer| %>
+    <br>
+    <h2><%= @beer.name %></h2>
+    <br>
+<% end %>
+<br>
 <p><%= link_to 'Add a new beer', new_beer_path %></p>
