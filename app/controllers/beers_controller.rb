@@ -1,5 +1,7 @@
 class BeersController < ApplicationController
 
+    before_action :require_login
+
     def index
         @beers = Beer.all 
     end
