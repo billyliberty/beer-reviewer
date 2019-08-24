@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
-  root "static#home"
 
-  resources :users
+  resources :users, only [:new, :create, :show]
   resources :reviews
-  resources :beers
+  resources :beers do
+    resources :reviews
+
+  # Home page
+
+  root "static#home"
 
   # login
   get '/signin', to: 'sessions#new'
@@ -16,6 +20,6 @@ Rails.application.routes.draw do
   # signup
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
