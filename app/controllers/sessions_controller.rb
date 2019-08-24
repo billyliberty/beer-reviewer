@@ -11,10 +11,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        if current_user
-            session.delete = user.user_id
-            redirect_to root_path
-        end
+        session.clear
+        redirect_to root_path
     end
     
 end
