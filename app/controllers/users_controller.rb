@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        @beer_bucket = current_user.beers
+    
     end
 
     def create
