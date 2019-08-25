@@ -11,21 +11,29 @@
 
   <body>
 
-  <div>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-sm-8'>
+        <%= yield %>
+        </div>
 
-    <% if logged_in?%>
-      <%= link_to 'Home', user_path(current_user)%> |
-      <%= link_to 'Logout', logout_path, method:"delete" %>
+        <div class='col-sm-4'>
+          <div class='sidebar'>
 
-    <% else %>
+          <% if logged_in?%>
+            <%= link_to 'Home', user_path(current_user)%> |
+            <%= link_to 'Logout', logout_path, method:"delete" %>
 
-      <%= link_to 'Sign Up', signup_path %> |
-      <%= link_to 'Log In', signin_path %>
+          <% else %>
 
-    <% end %>
+            <%= link_to 'Sign Up', signup_path %> |
+            <%= link_to 'Log In', signin_path %>
+
+        <% end %>
+        </div>
+      </div>
       
     </div>
 
-    <%= yield %>
   </body>
 </html>
