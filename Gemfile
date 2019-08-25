@@ -15,9 +15,15 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+
 gem 'bcrypt'
-# For password security
 gem 'omniauth'
+
+source 'https://rails-assets.org' do 
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
+
 
 gem 'bootstrap'
 # Use CoffeeScript for .coffee assets and views
