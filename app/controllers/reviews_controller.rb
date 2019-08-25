@@ -16,9 +16,24 @@ class ReviewsController < ApplicationController
     end
 
     def create
+        @review = Review.new(review_params)
+        if @review.save
+            redirect_to beer_review_path(@review.beer, @review)
+        else
+            render :new
+        end
     end
 
     def edit
+        @beer = Beer.find_by(id: params[:beer_id])
+        if review.user_id != current_user.id 
+            redirect_to beers_path
+        end
+    end
+
+    def update
+        @review.update(review_params)
+        redirect_to beer_review_path(@review.beer, @review)
     end
 
     def show
